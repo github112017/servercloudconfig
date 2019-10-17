@@ -13,7 +13,7 @@ public class ConfigServiceController {
 	@Value("${valores.valor_fijo}")
 	String valorFijo;
 	
-	@Value("${valores.valor_hh}") 
+	@Value("${valores.valor_fijoo}") 
 	String valorFuncion;
 	
 	@Autowired
