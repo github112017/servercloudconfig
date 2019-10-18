@@ -13,9 +13,6 @@ public class ConfigServiceController {
 	@Value("${valores.valor_fijo}")
 	String valorFijo;
 	
-	@Value("${valores.valor_fijoo}") 
-	String valorFuncion;
-	
 	@Autowired
 	private Configuration configuration;
 
@@ -26,15 +23,15 @@ public class ConfigServiceController {
 	public BeanConfiguration getConfiguracion()
 	{
 		return new BeanConfiguration(configuration.getMinimum(),
-				configuration.getMaximum(),valorFijo,valorFuncion);
+				configuration.getMaximum(),valorFijo);
 	}
 	
 	
 	@GetMapping("/refrescado")
-	public BeanConfiguration getConfiguracionRefrescada(@Value("${valores.valor_funcion}") String valorFuncion)
+	public BeanConfiguration getConfiguracionRefrescada()
 	{
 		return new BeanConfiguration(configuration.getMinimum(),
-				configuration.getMaximum(),valorFijo,valorFuncion);
+				configuration.getMaximum(),valorFijo);
 	}
 	@GetMapping("/datos")
 	public ConfigurationData retrieveDatosFromConfigurations() {

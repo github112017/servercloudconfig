@@ -9,13 +9,13 @@ public class BeanConfiguration {
 	private int  minResultados;
 	private int maxResultados;		
 	private String valorFijo;
-	private String valorFuncion;
+	//private String valorFuncion;
 	
-	public  BeanConfiguration(int minResultado,int maxResultado,String valorFijo,String valorFuncion)
+	public  BeanConfiguration(int minResultado,int maxResultado,String valorFijo)
 	{
 		this.minResultados=minResultado;
 		this.maxResultados=maxResultado;
 		this.valorFijo=valorFijo;
-		this.valorFuncion=valorFuncion;
+	
 	}
 }
