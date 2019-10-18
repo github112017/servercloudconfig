@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.profesorp.configclient.bean.BeanConfiguration;
 
+
 @RefreshScope
 @RestController
 public class ConfigServiceController {
