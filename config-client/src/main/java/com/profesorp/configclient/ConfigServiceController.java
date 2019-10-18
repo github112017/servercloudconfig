@@ -10,10 +10,10 @@ import com.profesorp.configclient.bean.BeanConfiguration;
 @RestController
 public class ConfigServiceController {
 	
-	@Value("${firstName}")
+	@Value("${first.name}")
 	String firstName;
 	
-	@Value("${lastName}")
+	@Value("${last.name}")
 	String lastName;
 	
 	@Autowired
@@ -31,7 +31,7 @@ public class ConfigServiceController {
 	
 	
 	@GetMapping("/refrescado")
-	public BeanConfiguration getConfiguracionRefrescada()
+	public BeanConfiguration getConfiguracionRefrescada(@Value("${last.name}") String lastName)
 	{
 		return new BeanConfiguration(configuration.getMinimum(),
 				configuration.getMaximum(),firstName,lastName);
