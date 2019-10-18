@@ -10,8 +10,11 @@ import com.profesorp.configclient.bean.BeanConfiguration;
 @RestController
 public class ConfigServiceController {
 	
-	@Value("${valores.valor_fijo}")
-	String valorFijo;
+	@Value("${firstName}")
+	String firstName;
+	
+	@Value("${lastName}")
+	String lastName;
 	
 	@Autowired
 	private Configuration configuration;
@@ -23,7 +26,7 @@ public class ConfigServiceController {
 	public BeanConfiguration getConfiguracion()
 	{
 		return new BeanConfiguration(configuration.getMinimum(),
-				configuration.getMaximum(),valorFijo);
+				configuration.getMaximum(),firstName,lastName);
 	}
 	
 	
@@ -31,7 +34,7 @@ public class ConfigServiceController {
 	public BeanConfiguration getConfiguracionRefrescada()
 	{
 		return new BeanConfiguration(configuration.getMinimum(),
-				configuration.getMaximum(),valorFijo);
+				configuration.getMaximum(),firstName,lastName);
 	}
 	@GetMapping("/datos")
 	public ConfigurationData retrieveDatosFromConfigurations() {
